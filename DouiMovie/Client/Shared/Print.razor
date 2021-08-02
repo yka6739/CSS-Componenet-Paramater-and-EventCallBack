@@ -1,0 +1,21 @@
+﻿
+
+<div class="a">
+    
+        <img src="@p.Poster" />
+        <div class="p">
+            <p>@p.Title</p>
+        </div>
+
+
+        <button type="button" class="btn btn-info" @onclick="(()=>Delete.InvokeAsync(p))">Delete</button>
+        <button type="button" class="btn btn-danger" @onclick="(()=>Add.InvokeAsync(p))">Add</button>
+   >
+</div>
+
+
+@code {
+    [Parameter] public Movie p { get; set; }
+    [Parameter] public EventCallback<Movie> Delete { get; set; }
+    [Parameter] public EventCallback<Movie> Add { get; set; }
+}
